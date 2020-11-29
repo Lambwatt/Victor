@@ -11,8 +11,22 @@ using namespace Victor;
 
 int main()
 {
-	//Vector vec({1.0, 2.0, 3.0});
-    std::cout << "Hello World!\n"; 
+    std::cout << "Hello World!\n";
+
+	Vector vecA({1.0, 2.0});
+	cout << "vecA: ";
+	vecA.print();
+	cout << endl;
+
+	cout << "vecA + ";
+	Vector vecB({ 1.0, 1.0 });
+	vecB.print();
+	cout << " = ";
+	Vector vecC = vecA + vecB;
+	vecC.print();
+	cout << endl;
+
+
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
