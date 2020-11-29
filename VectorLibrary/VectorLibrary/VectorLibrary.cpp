@@ -26,7 +26,12 @@ int main()
 	vecC.print();
 	cout << endl;
 
-
+	Vector vecD = vecA * 2;
+	Vector vecE = 2.0 * vecA;
+	vecD.print();
+	cout << " = ";
+	vecE.print();
+	cout << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

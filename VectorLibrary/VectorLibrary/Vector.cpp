@@ -27,6 +27,24 @@ Vector Vector::operator+(const Vector& other) {
 		throw length_error(DIMENSION_MATCH_ERR);
 }
 
+Vector Vector::operator*(double scalar) const {
+	int size = components.size();
+	Vector res(size);
+	for (int i = 0; i < size; i++) {
+		res.components[i] = components[i] * scalar;
+	}
+	return res;
+}
+
+Vector Victor::operator*(double scalar, const Vector& vector) {
+	return vector * scalar;
+}
+
+Vector Victor::operator*(int scalar, const Vector& vector) {
+	return vector * scalar;
+}
+
+
 double& Vector::operator[](int index) {
 	return components[index];
 }
