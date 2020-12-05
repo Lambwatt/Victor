@@ -14,24 +14,18 @@ int main()
     std::cout << "Hello World!\n";
 
 	Vector vecA({1.0, 2.0});
-	cout << "vecA: ";
-	vecA.print();
-	cout << endl;
+	cout << "vecA: "<<vecA.print()<<endl;
 
-	cout << "vecA + ";
 	Vector vecB({ 1.0, 1.0 });
-	vecB.print();
-	cout << " = ";
 	Vector vecC = vecA + vecB;
-	vecC.print();
-	cout << endl;
+	cout << "vecA + " << vecB.print() << " = " << vecC.print() << endl;
 
 	Vector vecD = vecA * 2;
-	Vector vecE = 2.0 * vecA;
-	vecD.print();
-	cout << " = ";
-	vecE.print();
-	cout << endl;
+	Vector vecE = 2.0 * vecA;	
+	cout << vecD.print() << " = " << vecE.print() << endl;
+
+	Vector lrg({ 1,2,3,4,5,6,7,8 });
+	cout << lrg.print() << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

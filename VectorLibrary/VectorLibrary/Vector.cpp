@@ -7,6 +7,7 @@ using namespace Victor;
 
 #define INVALID_INDEX_ERR "Index not in vector range"
 #define DIMENSION_MATCH_ERR "Vector dimensions do not match"
+#define VEC_VAL_FORMAT "%.2f"
 
 Vector::Vector(initializer_list<double> values) : components(values) {
 	//std::cout << components.size() <<"/"<< components.capacity() << endl;
@@ -49,16 +50,21 @@ double& Vector::operator[](int index) {
 	return components[index];
 }
 
-void Vector::print() {
+std::string Vector::print() {
 	int size = components.size(), i = 0;
-	cout << "[";
+	std::string res("[");
+	char buffer[11];
 	if (size > 0) {
-		cout << components[i++];
+		sprintf_s(buffer, VEC_VAL_FORMAT, components[i++]);
+		res += buffer;
 		for (; i < size; i++) {
-			cout << ", " << components[i];
+			res += ", ";
+			sprintf_s(buffer, VEC_VAL_FORMAT, components[i]);
+			res += buffer;
 		}
 	}
-	cout << "]";
+	res+= "]";
+	return res;
 }
 
 void Vector::setValueAt(int index, double value) {

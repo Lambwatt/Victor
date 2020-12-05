@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -16,7 +17,7 @@ namespace Victor {
 
 		double& operator[](int index);
 		void setValueAt(int index, double value);
-		void print();
+		std::string print();
 	};
 
 	Vector operator*(int scalar, const Vector& vector);
